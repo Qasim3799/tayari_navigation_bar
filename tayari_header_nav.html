@@ -1,0 +1,194 @@
+<style>
+    /* Slide Out Animation */
+    @keyframes slide-out {
+        0% {
+            width: 100%;
+            align-self: flex-end;
+        }
+        50% {
+            width: 0;
+            align-self: flex-end;
+        }
+        51% {
+            width: 0;
+            align-self: flex-start;
+        }
+        100% {
+            width: 100%;
+            align-self: flex-start;
+            
+        }
+        
+    }  
+
+    /* Navigation Bar */
+    #nav-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 16px;
+        height: 50px;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        padding: 10px 0;
+    }
+    #navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+    #navbar a {
+        text-decoration: none;
+        color: whitesmoke;
+        position: relative;
+        padding-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: bold;
+    }
+    .hov-slider-cont {
+        height: 1.5px;
+        background-color: transparent;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .hov-slider {
+        background-color: orange;
+        height: 100%;
+        width: 0;
+        transition: width 0.3s ease-in-out;
+        transform-origin: left;
+    }
+    #navbar a:hover .hov-slider {
+        width: 100%;
+    }
+    #navbar a:not(:hover) .hov-slider-cont {
+        justify-content: flex-end;
+    }
+    #navbar a:not(:hover) .hov-slider {
+        width: 0;
+        transform-origin: right;
+    }
+    /* Invite Link */
+    #nav-wrapper #nav-invite {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .nav-invite-slider {
+        background-color: orange;
+        height: 1px;
+        width: 100%;
+        transition: width 0.3s ease-in-out 1;
+        margin-top: 2px;
+    }
+    #nav-invite:hover .nav-invite-slider {
+    animation: slide-out 1.5s ease-in-out forwards;
+}
+    /* Dropdown Styles */
+    .has-dropdown {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 10px 0;
+        min-width: 160px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        z-index: 100;
+        margin-top: 20px;
+    }
+    .dropdown a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        font-size: 14px;
+        text-align: left;
+        white-space: nowrap;
+        background-color: black;
+    }
+    .dropdown a:hover {
+        background-color: orange;
+        color: black;
+    }
+    .has-dropdown:hover .dropdown {
+        display: flex;
+    }
+    /* Triangle Nudge */
+    .dropdown::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #111;
+    }
+</style>
+<div id="nav-wrapper">
+    <a id="logo" href="https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/6728d0878b3db89eb4f1992f_Asset%201_1.svg">
+        <img src="https://files.secure.website/wscfus/10797405/32932056/taylog.png" alt="logo" width="200px" height="60px">
+    </a>
+    <nav id="navbar">
+        <a href="https://my.secure.website/luminarians/#">
+            MISSION
+            <div class="hov-slider-cont">
+                <div class="hov-slider"></div>
+            </div>
+        </a>
+        <a href="https://my.secure.website/luminarians/#">
+            JOURNEY
+            <div class="hov-slider-cont">
+                <div class="hov-slider"></div>
+            </div>
+        </a>
+        <div class="has-dropdown">
+            <a href="https://my.secure.website/luminarians/#">
+                SUMMITS
+                <div class="hov-slider-cont">
+                    <div class="hov-slider"></div>
+                </div>
+            </a>
+            <div class="dropdown">
+                <a href="https://my.secure.website/luminarians/#">Summit 2023</a>
+                <a href="https://my.secure.website/luminarians/#">Summit 2024</a>
+                <a href="https://my.secure.website/luminarians/#">Future Events</a>
+            </div>
+        </div>
+        <a href="https://my.secure.website/luminarians/#">
+            THOUGHT LEADERS
+            <div class="hov-slider-cont">
+                <div class="hov-slider"></div>
+            </div>
+        </a>
+        <a href="https://my.secure.website/luminarians/#">
+            ABOUT
+            <div class="hov-slider-cont">
+                <div class="hov-slider"></div>
+            </div>
+        </a>
+    </nav>
+    <a id="nav-invite" style="padding:10px 15px;" href="https://my.secure.website/luminarians/#">
+        REQUEST AN INVITATION
+        <div class="nav-invite-slider"></div>
+    </a>
+</div>
